@@ -380,6 +380,10 @@ if main['GCC'] or main['CLANG']:
                          '-Wno-error=deprecated-declarations',
                          '-Wno-error=deprecated',
                         ])
+
+    # Disable certain warnings
+    main.Append(CCFLAGS=['-Wno-type-limits'])
+
 else:
     error('\n'.join((
           "Don't know what compiler options to use for your compiler.",
